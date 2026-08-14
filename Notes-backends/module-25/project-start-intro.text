@@ -1,0 +1,91 @@
+5. Our Apporach for PH-Tour-Management**********************************
+
+1. Agile Hybrid Model :-----------
+
+Agile Hybrid Model হলো এমন একটি Software Development Model যেখানে Agile-এর নমনীয়তা (Flexibility) এবং অন্য SDLC Model (যেমন Waterfall বা V-Model)-এর পরিকল্পনা ও কাঠামো (Structure) একসাথে ব্যবহার করা হয়। এর উদ্দেশ্য হলো Project-এর চাহিদা অনুযায়ী উভয় পদ্ধতির সুবিধা গ্রহণ করা।
+
+Agile Hybrid Model-এর কাজের ধাপ :--------------------
+
+-----Planning
+Project-এর লক্ষ্য, Scope, Budget এবং Timeline নির্ধারণ করা।
+Planning হলো SDLC-এর প্রথম ধাপ, যেখানে Project-এর লক্ষ্য, Scope, Requirements, Budget, Timeline, Resources এবং Risk নির্ধারণ করে সফলভাবে Project পরিচালনার পরিকল্পনা করা হয়।
+
+-----Requirements Analysis
+প্রধান Requirements সংগ্রহ ও বিশ্লেষণ করা।
+Requirement Analysis হলো SDLC-এর এমন একটি ধাপ, যেখানে Client এবং User-এর চাহিদা সংগ্রহ, বিশ্লেষণ, যাচাই এবং Document করা হয়, যাতে Development Team সঠিকভাবে Software তৈরি করতে পারে।
+
+-----System Design(UI)
+System Architecture এবং Overall Design তৈরি করা।
+System Design হলো SDLC-এর এমন একটি ধাপ, যেখানে Requirement-এর ভিত্তিতে Software-এর Architecture, Database, APIs, UI এবং Technology Stack-এর Blueprint তৈরি করা হয়, যাতে Development কার্যকরভাবে সম্পন্ন করা যায়।
+
+-----Development
+Project-কে ছোট ছোট Sprint-এ ভাগ করে Development করা।
+প্রতিটি Sprint-এ Coding, Testing এবং Review সম্পন্ন করা।
+Development হলো SDLC-এর সেই ধাপ, যেখানে System Design অনুসরণ করে Programming Language, Framework এবং Database ব্যবহার করে Software-এর বিভিন্ন Feature ও Functionality বাস্তবায়নের জন্য Code লেখা হয়।
+
+-----Testing
+প্রতিটি Sprint শেষে Testing করা এবং Bug Fix করা।
+Testing হলো SDLC-এর এমন একটি ধাপ, যেখানে সফটওয়্যারকে বিভিন্ন ধরনের পরীক্ষা করে নিশ্চিত করা হয় যে এটি Bug-মুক্ত, নির্ভরযোগ্য এবং Client-এর Requirements অনুযায়ী সঠিকভাবে কাজ করছে।
+
+-----Deployment
+সম্পূর্ণ বা আংশিক Software Production-এ Release করা।
+Deployment হলো SDLC-এর এমন একটি ধাপ, যেখানে Testing সফল হওয়ার পর সফটওয়্যারকে Production Environment-এ Release করা হয়, যাতে ব্যবহারকারীরা নিরাপদে এবং নির্ভরযোগ্যভাবে এটি ব্যবহার করতে পারেন।
+Manual Deployment :- Developer বা DevOps Engineer নিজে হাতে Software Deploy করেন।
+Automated Deployment :-CI/CD Pipeline-এর মাধ্যমে স্বয়ংক্রিয়ভাবে Software Deploy করা হয়।
+
+Frontend Production Server-এ Deploy করা হলো।
+Backend Server-এ API Deploy করা হলো।
+MongoDB Database Production-এর সাথে সংযুক্ত করা হলো।
+Domain Configure করা হলো।
+Deployment-এর পরে Application Test করে নিশ্চিত করা হলো যে সব Feature ঠিকভাবে কাজ করছে।
+
+-----Maintenance
+Bug Fix, Performance Improvement এবং নতুন Feature যোগ করা।
+Maintenance হলো SDLC-এর শেষ ধাপ, যেখানে Deployment-এর পর সফটওয়্যারকে Bug Fix, Update এবং নতুন Feature যোগ করে নিয়মিত উন্নত করা হয়।
+
+Agile Hybrid Model-এর বৈশিষ্ট্য :--------------------------------------
+Agile এবং Waterfall/V-Model-এর সমন্বয়।
+শুরুতে পরিকল্পনা ও Design করা হয়।
+Development Sprint ভিত্তিক হয়।
+Client Feedback নিয়মিত নেওয়া হয়।
+Continuous Testing করা হয়।
+Requirement পরিবর্তন তুলনামূলক সহজ।
+
+সুবিধা (Advantages) :---------------------------------------------
+Planning এবং Flexibility—দুটোরই সুবিধা পাওয়া যায়।
+Risk কমে যায়।
+Client Feedback দ্রুত পাওয়া যায়।
+Quality উন্নত হয়।
+বড় Enterprise Project-এর জন্য উপযুক্ত।
+
+অসুবিধা (Disadvantages) :------------------------------------------
+পরিচালনা করা তুলনামূলক জটিল।
+দক্ষ Project Management প্রয়োজন।
+Team-কে একাধিক Methodology সম্পর্কে জানতে হয়।
+সঠিক পরিকল্পনা না থাকলে Project জটিল হয়ে যেতে পারে।
+
+2.  Early Functional Deliveries ***************************************
+
+Early Functional Deliveries অর্থ হলো প্রজেক্টের সম্পূর্ণ কাজ শেষ হওয়ার আগে সফটওয়্যারের কার্যকর (Working) অংশগুলো ধাপে ধাপে ব্যবহারকারীর কাছে সরবরাহ করা। এতে ক্লায়েন্ট শুরু থেকেই সফটওয়্যারের বাস্তব কাজ দেখতে ও ব্যবহার করতে পারেন এবং দ্রুত Feedback দিতে পারেন।
+
+2. Weekly Module Development*******************************************************
+
+Weekly Module Development হলো এমন একটি Development Approach যেখানে Project-এর কাজকে ছোট ছোট Modules-এ ভাগ করা হয় এবং প্রতি সপ্তাহে (Weekly) একটি বা একাধিক Module তৈরি, পরীক্ষা (Testing) এবং Deliver করা হয়।
+
+এই পদ্ধতি সাধারণত Agile বা Scrum-এ ব্যবহৃত হয়, যেখানে প্রতিটি সপ্তাহ বা Sprint-এর শেষে একটি কার্যকর (Working) Module প্রস্তুত থাকে।
+
+3. Continuous Feedback Loop*************************************************
+
+Continuous Feedback Loop হলো এমন একটি প্রক্রিয়া যেখানে সফটওয়্যার ডেভেলপমেন্টের প্রতিটি ধাপে নিয়মিতভাবে Client, User এবং Team-এর কাছ থেকে Feedback সংগ্রহ করা হয় এবং সেই Feedback-এর ভিত্তিতে সফটওয়্যারকে ধারাবাহিকভাবে উন্নত করা হয়।
+
+4. How we started PH Tour Management----------------------------------
+   1. Project brief : Understood Client needs and busincss goals
+   1. Requirement Document : 
+   3. Moduler Design : 
+   4. Tech Stack Select : Node.js, mongodb, redis
+   5. Repo setup
+
+5. 
+5. Cache: Redis*********************************
+
+Redis একটি In-Memory Cache Database, যা বারবার ব্যবহৃত Data সাময়িকভাবে Memory-তে সংরক্ষণ করে। এর ফলে Database-এ বারবার Query করতে হয় না, Application দ্রুত Response দেয় এবং Server-এর Load কমে যায়।

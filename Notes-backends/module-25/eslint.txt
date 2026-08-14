@@ -1,0 +1,38 @@
+1. https://typescript-eslint.io/rules/no-unused-vars/
+   --> 
+2. https://typescript-eslint.io/getting-started/
+
+1. install----------------------------------------------------------
+   --> npm install --save-dev eslint @eslint/js typescript typescript-eslint
+
+2. **** eslint.config.mjs *********root : add file*********************
+
+import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
+
+export default defineConfig({
+  files: ["**/*.{js,ts}"],
+  extends: [
+    js.configs.recommended,
+
+    tseslint.configs.strict,
+    tseslint.configs.stylistic,
+    {
+      rules: {
+        "no-console": "warn",
+      },
+    },
+  ],
+});
+
+
+3. terminal run-----------------------------------------------
+   --->  npx eslint .
+
+4. package.json-----------------------------------------------
+   --> "lint": "npx eslint ./src",
+   --> npm run lint
+
+5. eslint mouse hover click-----------------------------------
+   -> /* eslint-disable no-console */

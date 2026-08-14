@@ -1,0 +1,87 @@
+
+1. globalErrorhandle +++ logic ++ AppError *****************************
+
+class in constructor
+class AppError extends Error {
+  public statusCode: number;
+
+  constructor(statusCode: number, message: string, stack = "") {
+    super(message);
+    this.statusCode = statusCode;
+    if (stack) {
+      this.stack = stack;
+    } else {
+      Error.captureStackTrace(this, this.constructor);
+    }
+  }
+}
+export default AppError;
+
+----------------------------------------------------------------------------
+
+2. globalErrorhandle +++ logic ++ AppError *****************************
+export const globalErrorhandle = (
+  err: any,
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  let statusCode = 500;
+  let message = `Something went wrong!!`;
+
+  //! AppError--with and without-------------------------
+  if (err instanceof AppError) {
+    statusCode = err.statusCode;
+    message = err.message;
+  } else if (err instanceof Error) {
+    statusCode = 500;
+    message = err.message;
+  }
+
+  res.status(statusCode).json({
+    success: false,
+    message,
+    stack: envVars.NODE_ENV === "development" ? err.stack : null,
+  });
+};
+
+---------------------------------------------------------------------
+
+1. controller use *****************************************************
+
+*** AppError*************
+   -> throw new AppError(StatusCodes.BAD_REQUEST, "fake error-400");
+
+------------------------------------------------------------------------
+**** global error************
+   ->  throw new Error("fake error");
+
+------------------------------------------------------------------------
+
+1. **** instanceof হলো JavaScript-এর একটি operator।*******************************
+এটি পরীক্ষা করে একটি object কোনো নির্দিষ্ট class বা constructor থেকে তৈরি হয়েছে কি না।
+object instanceof ClassName --> এটি true অথবা false return করে।
+
+2. err কি Error class-এর object?*****************************************
+যদি true হয়, তাহলে নিরাপদে err.message এবং err.stack ব্যবহার করা যায়।
+
+3. অর্থাৎ AppError হলো Error-এর child class।*********************************************
+4. typeof → Primitive type check (string, number, boolean)*******************************
+5. instanceof → Object/Class check (Error, Date, Array, AppError, custom classes`)*******
+
+6. super(message) হলো parent class (Error) এর constructor call করা।*********************
+   কারণ JavaScript-এর নিয়ম হলো, যে class অন্য class-কে extends করে, 
+   তার constructor-এ this ব্যবহার করার আগে super() call করতেই হবে।
+
+7. development → Stack trace দেখাবে।******************************
+   production → Stack trace লুকিয়ে রাখবে।
+
+8. Express ধরে ফেলে এবং কল করে:*********************************
+app.use((err, req, res, next) => {
+  // এখানে err = Error("Database Error")
+});
+
+9. এটি Error class-এর constructor call করে। ফলে Error class নিজেই: ***************
+this.message
+this.name
+অন্যান্য internal initialization

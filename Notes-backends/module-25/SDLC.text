@@ -1,0 +1,258 @@
+* Software development life cycle(SDLC)*********************************************
+     1. Software development life cycle(SDLC)
+
+1. Waterfall Model : ----------
+           Waterfall Model হলো SDLC-এর একটি ধাপে ধাপে (sequential) কাজ করার পদ্ধতি। এখানে একটি ধাপ সম্পূর্ণ শেষ না হলে পরের ধাপে যাওয়া যায় না।
+
+           Waterfall Model-এর ধাপগুলো : ----------
+           1. Requirements — কী কী ফিচার লাগবে তা নির্ধারণ করা
+           2. Design — System ও UI/Database ডিজাইন করা
+           3. Development — কোড লেখা
+           4. Testing — Bug খুঁজে বের করা
+           5. Deployment — সফটওয়্যার প্রকাশ করা
+           6. Maintenance — পরবর্তীতে Bug fix ও update করা
+
+Waterfall-এর বৈশিষ্ট্য : ----------------------------
+একটি ধাপ শেষ হলে পরের ধাপে যাওয়া হয়।
+পেছনের ধাপে ফিরে যাওয়া কঠিন।
+সব requirements শুরুতেই নির্ধারণ করতে হয়।
+Documentation বেশি থাকে।
+
+সুবিধা (Advantages):----------------------------
+ছোট ও স্থির requirement-এর project-এর জন্য ভালো।
+Planning ও budgeting সহজ হয়।
+Management করা সহজ।
+অসুবিধা (Disadvantages)
+মাঝপথে requirement বদলালে সমস্যা হয়।
+Testing অনেক দেরিতে শুরু হয়।
+Bug থাকলে পরে ঠিক করতে বেশি খরচ হয়।
+বড় ও পরিবর্তনশীল project-এর জন্য উপযুক্ত নয়।
+
+
+2. Agile*********************************************************************************
+Agile হলো SDLC-এর একটি আধুনিক সফটওয়্যার ডেভেলপমেন্ট পদ্ধতি, যেখানে পুরো প্রজেক্ট একবারে না করে ছোট ছোট অংশে (Iterations বা Sprints) তৈরি করা হয়। প্রতিটি Sprint শেষে কাজ করা সফটওয়্যারের একটি সংস্করণ (working product) পাওয়া যায়।
+
+Planning
+   ↓
+Sprint Planning
+   ↓
+Development
+   ↓
+Testing
+   ↓
+Review
+   ↓
+Feedback
+   ↓
+Next Sprint
+
+এই চক্রটি বারবার চলতে থাকে যতক্ষণ না পুরো প্রজেক্ট সম্পূর্ণ হয়।
+
+1. সহজ উদাহরণ (Todo App):------------------------
+
+Sprint 1 (১ সপ্তাহ)
+Login Page
+Register Page
+
+Sprint 2 (১ সপ্তাহ)
+Add Task
+View Task
+
+Sprint 3 (১ সপ্তাহ)
+Edit Task
+Delete Task
+
+Sprint 4 (১ সপ্তাহ)
+Complete Task
+Search ও Filter
+
+প্রতিটি Sprint শেষে ক্লায়েন্ট কাজ দেখে Feedback দিতে পারেন।
+
+2. Agile-এর বৈশিষ্ট্য :----------------------------------
+ছোট ছোট Sprint-এ কাজ হয়।
+নিয়মিত Client Feedback নেওয়া হয়।
+Requirement পরিবর্তন সহজ।
+Continuous Testing করা হয়।
+Team Collaboration বেশি থাকে।
+
+3. সুবিধা (Advantages) :-----------------------------------
+Requirement পরিবর্তন সহজ।
+Bug দ্রুত ধরা পড়ে।
+Client নিয়মিত Progress দেখতে পারেন।
+Working Software দ্রুত Deliver করা যায়।
+বড় Project-এর জন্য খুব কার্যকর।
+
+4. অসুবিধা (Disadvantages) :--------------------------------
+সঠিক Planning না থাকলে সময় বাড়তে পারে।
+Documentation তুলনামূলক কম হয়।
+Team-এর মধ্যে নিয়মিত যোগাযোগ দরকার।
+Scope বারবার বদলালে Project Management কঠিন হতে পারে।
+
+--------------------------------------------------------------------------
+
+3. Spiral Model******************************************************
+
+Spiral Model হলো SDLC-এর একটি Risk-Driven সফটওয়্যার ডেভেলপমেন্ট মডেল, যেখানে Waterfall এবং Prototyping-এর ধারণা একসাথে ব্যবহার করা হয়। এই মডেলে সফটওয়্যার ধাপে ধাপে (iterations) তৈরি হয় এবং প্রতিটি ধাপে ঝুঁকি (Risk) বিশ্লেষণ করে পরবর্তী কাজ নির্ধারণ করা হয়।
+
+Spiral Model-এর ধাপ : ----------------------------------
+Planning
+প্রজেক্টের লক্ষ্য, প্রয়োজনীয়তা এবং পরিকল্পনা নির্ধারণ করা।
+
+Risk Analysis
+সম্ভাব্য ঝুঁকি (Risk) শনাক্ত ও বিশ্লেষণ করা এবং সমাধানের পরিকল্পনা করা।
+
+Engineering (Development & Testing)
+সফটওয়্যার ডিজাইন, ডেভেলপমেন্ট এবং টেস্টিং করা।
+
+Evaluation
+ক্লায়েন্টের মতামত (Feedback) নেওয়া এবং পরবর্তী Iteration-এর পরিকল্পনা করা।
+
+এই চারটি ধাপ বারবার পুনরাবৃত্তি (Spiral) হয় যতক্ষণ না সফটওয়্যার সম্পূর্ণ হয়।
+
+Spiral Model-এর বৈশিষ্ট্য : ---------------------------
+Risk Analysis-এর উপর বেশি গুরুত্ব দেয়।
+Iteration ভিত্তিক Development।
+প্রতিটি ধাপে Client Feedback নেওয়া হয়।
+Requirement পরিবর্তন সহজ।
+বড় এবং জটিল Project-এর জন্য উপযুক্ত।
+
+সুবিধা (Advantages) :-----------------------------
+ঝুঁকি আগে থেকেই শনাক্ত করা যায়।
+Requirement পরিবর্তন সহজ।
+Client নিয়মিত Feedback দিতে পারেন।
+বড় ও High-Risk Project-এর জন্য কার্যকর।
+
+অসুবিধা (Disadvantages) : -------------------------
+পরিচালনা করা জটিল।
+খরচ বেশি।
+ছোট Project-এর জন্য উপযুক্ত নয়।
+দক্ষ Risk Analysis Team প্রয়োজন।
+
+4. V-Model (Verification and Validation Model)********************************
+
+V-Model (Verification and Validation Model) হলো SDLC-এর একটি Sequential মডেল, যা Waterfall Model-এর একটি উন্নত সংস্করণ। এই মডেলে Development-এর প্রতিটি ধাপের সাথে একটি নির্দিষ্ট Testing ধাপ যুক্ত থাকে। অর্থাৎ, Development এবং Testing সমান্তরালভাবে পরিকল্পনা করা হয়।
+
+V-Model-এর ধাপ :------------------------------
+Verification (Development Side): 
+
+Requirements Analysis
+সফটওয়্যারের প্রয়োজনীয়তা সংগ্রহ ও বিশ্লেষণ করা।
+
+System Design
+পুরো সিস্টেমের আর্কিটেকচার ও ডিজাইন তৈরি করা।
+
+Architecture / High-Level Design
+সিস্টেমের বিভিন্ন Module-এর কাঠামো নির্ধারণ করা।
+
+Module / Low-Level Design
+প্রতিটি Module-এর বিস্তারিত ডিজাইন করা।
+
+Coding
+সফটওয়্যার ডেভেলপমেন্ট বা কোড লেখা।
+
+Validation (Testing Side) : ----------------------------------------
+Unit Testing → Module / Low-Level Design যাচাই করে।
+Integration Testing → High-Level Design অনুযায়ী Module-এর সংযোগ পরীক্ষা করে।
+System Testing → System Design অনুযায়ী পুরো সিস্টেম পরীক্ষা করে।
+Acceptance Testing → Requirements অনুযায়ী ক্লায়েন্টের চাহিদা পূরণ হয়েছে কিনা পরীক্ষা করে।
+
+V-Model-এর বৈশিষ্ট্য :-----------------------------------------------
+Development-এর প্রতিটি ধাপের জন্য একটি নির্দিষ্ট Testing ধাপ থাকে।
+Testing-এর পরিকল্পনা শুরু থেকেই করা হয়।
+Documentation বেশি থাকে।
+Requirement পরিবর্তন করা কঠিন।
+Bug দ্রুত শনাক্ত করা যায়।
+
+সুবিধা (Advantages) :-----------------------------------------------
+শুরু থেকেই Testing পরিকল্পনা করা হয়।
+Bug দ্রুত ধরা পড়ে।
+Quality বেশি ভালো হয়।
+ছোট ও মাঝারি আকারের Project-এর জন্য উপযুক্ত।
+
+অসুবিধা (Disadvantages) :----------------------------
+Requirement পরিবর্তন করা কঠিন।
+Flexibility কম।
+বড় ও পরিবর্তনশীল Project-এর জন্য উপযুক্ত নয়।
+Iteration বা Continuous Feedback-এর সুবিধা নেই।
+
+5. Our Apporach for PH-Tour-Management**********************************
+
+1. Agile Hybrid Model :-----------
+
+Agile Hybrid Model হলো এমন একটি Software Development Model যেখানে Agile-এর নমনীয়তা (Flexibility) এবং অন্য SDLC Model (যেমন Waterfall বা V-Model)-এর পরিকল্পনা ও কাঠামো (Structure) একসাথে ব্যবহার করা হয়। এর উদ্দেশ্য হলো Project-এর চাহিদা অনুযায়ী উভয় পদ্ধতির সুবিধা গ্রহণ করা।
+
+Agile Hybrid Model-এর কাজের ধাপ :--------------------
+
+-----Planning
+Project-এর লক্ষ্য, Scope, Budget এবং Timeline নির্ধারণ করা।
+Planning হলো SDLC-এর প্রথম ধাপ, যেখানে Project-এর লক্ষ্য, Scope, Requirements, Budget, Timeline, Resources এবং Risk নির্ধারণ করে সফলভাবে Project পরিচালনার পরিকল্পনা করা হয়।
+
+-----Requirements Analysis
+প্রধান Requirements সংগ্রহ ও বিশ্লেষণ করা।
+Requirement Analysis হলো SDLC-এর এমন একটি ধাপ, যেখানে Client এবং User-এর চাহিদা সংগ্রহ, বিশ্লেষণ, যাচাই এবং Document করা হয়, যাতে Development Team সঠিকভাবে Software তৈরি করতে পারে।
+
+-----System Design(UI)
+System Architecture এবং Overall Design তৈরি করা।
+System Design হলো SDLC-এর এমন একটি ধাপ, যেখানে Requirement-এর ভিত্তিতে Software-এর Architecture, Database, APIs, UI এবং Technology Stack-এর Blueprint তৈরি করা হয়, যাতে Development কার্যকরভাবে সম্পন্ন করা যায়।
+
+-----Development
+Project-কে ছোট ছোট Sprint-এ ভাগ করে Development করা।
+প্রতিটি Sprint-এ Coding, Testing এবং Review সম্পন্ন করা।
+Development হলো SDLC-এর সেই ধাপ, যেখানে System Design অনুসরণ করে Programming Language, Framework এবং Database ব্যবহার করে Software-এর বিভিন্ন Feature ও Functionality বাস্তবায়নের জন্য Code লেখা হয়।
+
+-----Testing
+প্রতিটি Sprint শেষে Testing করা এবং Bug Fix করা।
+Testing হলো SDLC-এর এমন একটি ধাপ, যেখানে সফটওয়্যারকে বিভিন্ন ধরনের পরীক্ষা করে নিশ্চিত করা হয় যে এটি Bug-মুক্ত, নির্ভরযোগ্য এবং Client-এর Requirements অনুযায়ী সঠিকভাবে কাজ করছে।
+
+-----Deployment
+সম্পূর্ণ বা আংশিক Software Production-এ Release করা।
+Deployment হলো SDLC-এর এমন একটি ধাপ, যেখানে Testing সফল হওয়ার পর সফটওয়্যারকে Production Environment-এ Release করা হয়, যাতে ব্যবহারকারীরা নিরাপদে এবং নির্ভরযোগ্যভাবে এটি ব্যবহার করতে পারেন।
+Manual Deployment :- Developer বা DevOps Engineer নিজে হাতে Software Deploy করেন।
+Automated Deployment :-CI/CD Pipeline-এর মাধ্যমে স্বয়ংক্রিয়ভাবে Software Deploy করা হয়।
+
+Frontend Production Server-এ Deploy করা হলো।
+Backend Server-এ API Deploy করা হলো।
+MongoDB Database Production-এর সাথে সংযুক্ত করা হলো।
+Domain Configure করা হলো।
+Deployment-এর পরে Application Test করে নিশ্চিত করা হলো যে সব Feature ঠিকভাবে কাজ করছে।
+
+-----Maintenance
+Bug Fix, Performance Improvement এবং নতুন Feature যোগ করা।
+Maintenance হলো SDLC-এর শেষ ধাপ, যেখানে Deployment-এর পর সফটওয়্যারকে Bug Fix, Update এবং নতুন Feature যোগ করে নিয়মিত উন্নত করা হয়।
+
+Agile Hybrid Model-এর বৈশিষ্ট্য :--------------------------------------
+Agile এবং Waterfall/V-Model-এর সমন্বয়।
+শুরুতে পরিকল্পনা ও Design করা হয়।
+Development Sprint ভিত্তিক হয়।
+Client Feedback নিয়মিত নেওয়া হয়।
+Continuous Testing করা হয়।
+Requirement পরিবর্তন তুলনামূলক সহজ।
+
+সুবিধা (Advantages) :---------------------------------------------
+Planning এবং Flexibility—দুটোরই সুবিধা পাওয়া যায়।
+Risk কমে যায়।
+Client Feedback দ্রুত পাওয়া যায়।
+Quality উন্নত হয়।
+বড় Enterprise Project-এর জন্য উপযুক্ত।
+
+অসুবিধা (Disadvantages) :------------------------------------------
+পরিচালনা করা তুলনামূলক জটিল।
+দক্ষ Project Management প্রয়োজন।
+Team-কে একাধিক Methodology সম্পর্কে জানতে হয়।
+সঠিক পরিকল্পনা না থাকলে Project জটিল হয়ে যেতে পারে।
+
+2.  Early Functional Deliveries ***************************************
+
+Early Functional Deliveries অর্থ হলো প্রজেক্টের সম্পূর্ণ কাজ শেষ হওয়ার আগে সফটওয়্যারের কার্যকর (Working) অংশগুলো ধাপে ধাপে ব্যবহারকারীর কাছে সরবরাহ করা। এতে ক্লায়েন্ট শুরু থেকেই সফটওয়্যারের বাস্তব কাজ দেখতে ও ব্যবহার করতে পারেন এবং দ্রুত Feedback দিতে পারেন।
+
+2. Weekly Module Development*******************************************************
+
+Weekly Module Development হলো এমন একটি Development Approach যেখানে Project-এর কাজকে ছোট ছোট Modules-এ ভাগ করা হয় এবং প্রতি সপ্তাহে (Weekly) একটি বা একাধিক Module তৈরি, পরীক্ষা (Testing) এবং Deliver করা হয়।
+
+এই পদ্ধতি সাধারণত Agile বা Scrum-এ ব্যবহৃত হয়, যেখানে প্রতিটি সপ্তাহ বা Sprint-এর শেষে একটি কার্যকর (Working) Module প্রস্তুত থাকে।
+
+3. Continuous Feedback Loop*************************************************
+
+Continuous Feedback Loop হলো এমন একটি প্রক্রিয়া যেখানে সফটওয়্যার ডেভেলপমেন্টের প্রতিটি ধাপে নিয়মিতভাবে Client, User এবং Team-এর কাছ থেকে Feedback সংগ্রহ করা হয় এবং সেই Feedback-এর ভিত্তিতে সফটওয়্যারকে ধারাবাহিকভাবে উন্নত করা হয়।
+
+4. RBAC ---> Roll Base Access control

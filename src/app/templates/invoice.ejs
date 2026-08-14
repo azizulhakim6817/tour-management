@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booking Invoice</title>
+  </head>
+
+  <body
+    style="
+      margin: 0;
+      padding: 40px 0;
+      background: #f3f6fb;
+      font-family: Arial, Helvetica, sans-serif;
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="background: #f3f6fb"
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="650"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <!-- Header -->
+            <tr>
+              <td
+                align="center"
+                style="
+                  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+                  padding: 35px;
+                  color: white;
+                "
+              >
+                <h1 style="margin: 0; font-size: 30px; font-weight: bold">
+                  Booking Confirmed 🎉
+                </h1>
+
+                <p style="margin-top: 10px; font-size: 16px; color: #e5e7eb">
+                  Your booking has been successfully completed.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td style="padding: 40px">
+                <p style="font-size: 18px; color: #111827; margin-top: 0">
+                  Hello,
+                  <strong style="color: #2563eb"> <%= name %> </strong>
+                  👋
+                </p>
+
+                <p style="color: #4b5563; line-height: 28px; font-size: 16px">
+                  Thank you for choosing our travel service. Your booking has
+                  been successfully confirmed and your payment has been
+                  received.
+                </p>
+
+                <table
+                  width="100%"
+                  cellpadding="15"
+                  cellspacing="0"
+                  style="
+                    background: #f8fafc;
+                    border: 1px solid #e5e7eb;
+                    border-radius: 8px;
+                    margin: 30px 0;
+                  "
+                >
+                  <tr>
+                    <td align="center">
+                      <div style="font-size: 42px; margin-bottom: 10px">📄</div>
+
+                      <h3 style="margin: 0; color: #111827">
+                        Invoice Attached
+                      </h3>
+
+                      <p
+                        style="
+                          margin-top: 12px;
+                          color: #6b7280;
+                          line-height: 26px;
+                        "
+                      >
+                        We've attached your booking invoice as a PDF. Please
+                        keep it for future reference.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="color: #4b5563; line-height: 28px; font-size: 16px">
+                  If you have any questions regarding your booking, feel free to
+                  contact our support team.
+                </p>
+
+                <br />
+
+                <table cellpadding="0" cellspacing="0" align="center">
+                  <tr>
+                    <td style="background: #2563eb; border-radius: 6px">
+                      <a
+                        href="#"
+                        style="
+                          display: inline-block;
+                          padding: 14px 30px;
+                          color: white;
+                          text-decoration: none;
+                          font-size: 16px;
+                          font-weight: bold;
+                        "
+                      >
+                        View My Booking
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                align="center"
+                style="
+                  background: #f9fafb;
+                  padding: 30px;
+                  border-top: 1px solid #e5e7eb;
+                "
+              >
+                <h3 style="margin: 0; color: #111827">Thank You ❤️</h3>
+
+                <p style="color: #6b7280; margin-top: 12px; line-height: 26px">
+                  We appreciate your trust in us and look forward to serving you
+                  again.
+                </p>
+
+                <p style="margin-top: 25px; color: #9ca3af; font-size: 13px">
+                  © 2026 Travel Booking System<br />
+                  This is an automated email. Please do not reply.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

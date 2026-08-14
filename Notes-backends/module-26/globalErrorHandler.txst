@@ -1,0 +1,34 @@
+9. error.stack --> Development----Production-এ কি stack পাঠানো উচিত? না।****************
+-> stack: process.env.NODE_ENV === "development" ? err.stack : null,
+-> কারণ stack-এ project-এর file path এবং internal information থাকে, যা security risk হতে পারে।
+
+Production---------------------------------------:
+File path লুকানো থাকে
+Stack trace লুকানো থাকে
+Internal information user দেখতে পায় না  
+User-friendly error message।
+stack লুকিয়ে রাখা হয়।
+Performance optimization চালু থাকে।
+Sensitive information প্রকাশ করা হয় না।
+Real user-এর জন্য। 
+
+
+1// stack: process.env.NODE_ENV === "development" ? err.stack : null,
+   এই কোডের উদ্দেশ্য হলো development-এ stack দেখানো এবং production-এ লুকিয়ে রাখা।
+
+** Development:----------------------------------
+বিস্তারিত error
+File path দেখা যায়
+Stack trace দেখা যায়
+বিস্তারিত error message দেখায়।
+err.stack দেখানো যায়।
+Debugging সহজ।
+Console log রাখা যায়।
+Developer-এর জন্য।
+                      
+
+2// createUserService---------------------------------------
+  throw new Error("Something went wrong");
+  next(err)
+
+  

@@ -1,0 +1,120 @@
+
+1. Higher Order Function (HOF) কী?******************************
+
+1. Higher Order Function হলো এমন একটি function যা:-----------
+অন্য একটি function-কে parameter হিসেবে গ্রহণ করে, অথবা
+একটি function return করে।
+
+function greet(name: string) {
+  return `Hello ${name}`;
+}
+
+function execute(fn: (name: string) => string) {
+  console.log(fn("Azizul"));
+}
+
+execute(greet);
+
+2.***try{}.catch((err)=>{})*********************************************
+
+1. এই catchAsync হলো একটি Higher Order Function (HOF)। এর কাজ হলো async controller-এর error স্বয়ংক্রিয়ভাবে catch করে next(err)-এ পাঠানো, যাতে প্রতিটি controller-এ আলাদা try...catch লিখতে না হয়।
+
+2. Asynchandle Type***************************************
+type Asynchandle = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => Promise<void>;
+
+এটি একটি function type।
+অর্থাৎ fn এমন একটি function হবে, যা:
+req নেবে
+res নেবে
+next নেবে
+Promise<void> return করবে (অর্থাৎ async function)
+
+উদাহরণ:
+const createUser: Asynchandle = async (req, res, next) => {
+  res.json({ success: true });
+};
+
+3. catchAsync------------------------
+const catchAsync =
+  (fn: Asynchandle) => (req: Request, res: Response, next: NextFunction) => {
+
+এখানে দুটি function আছে।
+4. প্রথম function:------------------
+(fn: Asynchandle) =>
+এটি controller function (fn) গ্রহণ করে।
+
+5. দ্বিতীয় function:------------------
+(req, res, next) => { ... }
+এটি Express-এর request handle করে।
+তাই catchAsync একটি Higher Order Function।
+
+6. Promise.resolve()-------------------------------
+Promise.resolve(fn(req, res, next))
+fn যেহেতু async function, তাই এটি Promise return করে।
+Promise.resolve() নিশ্চিত করে যে Promise-এর error .catch()-এ ধরা পড়বে।
+
+7. .catch()--------------------------------
+.catch((err) => {
+  next(err);
+});
+
+যদি controller-এর ভিতরে কোনো error হয়:
+throw new Error("Database Error");
+তাহলে সেই error এখানে চলে আসবে।
+
+তারপর:
+next(err);
+Express-এর Global Error handle-এ error পাঠিয়ে দেয়।
+
+8. Controller:------------------------------------
+const createUser = catchAsync(async (req, res) => {
+  const user = await UserServices.createUser(req.body);
+
+  res.status(201).json({
+    success: true,
+    data: user,
+  });
+});
+
+এখানে আর try...catch লাগবে না।
+
+9. Flow-----------------------------------------------------
+Client Request
+      │
+      ▼
+catchAsync()
+      │
+      ▼
+Controller (async)
+      │
+      ├── Success
+      │      ▼
+      │   Response
+      │
+      └── Error
+             ▼
+      Promise.catch()
+             ▼
+        next(err)
+             ▼
+Global Error handle
+             ▼
+JSON Response
+
+10. ছোট একটি পরামর্শ-----------------------------
+আপনার কোডে:
+
+.catch((err: any) => {
+  console.log(err);
+  next(err);
+});
+
+console.log(err) production code-এ সাধারণত দরকার হয় না, কারণ Global Error handle-এই logging করা যায়। এছাড়া err: any না লিখে type inference ব্যবহার করতে পারেন:
+
+.catch((err) => {
+  next(err);
+});

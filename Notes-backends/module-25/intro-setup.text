@@ -1,0 +1,51 @@
+1. RBAC ---> Roll Base Access control
+
+# 1. main branch-এ ছিলেন----------------
+git checkout main
+
+# 2. নতুন branch তৈরি করলেন-------------------------
+git checkout -b development
+
+# 3. development-এ কাজ করলেন------------------------------------
+git add .
+git commit -m "RBAC and .gitignore setup"
+git push -u origin development
+
+# 4. কাজ শেষ হলে main-এ merge------------------------------
+git checkout main
+git merge development
+git push origin main
+
+4. developer code github request---------------------------
+   --> project-setup--->git add . --> commit --> push
+   --> developer --> main--> git pull origin main ---> full code asbe?
+
+5. github-----project(CO)-----------------------------------
+   --> pull request --> new pull request
+   --> main <-----project-setup
+   
+   --> create pull request---> add & title: project-setup completed
+   --> files changed---->
+   --> conversion---> Merge pull request --> confirm merge
+
+13. Merge = দুই branch-এর history জোড়া লাগে, একটি merge commit তৈরি হয়।
+
+14. Rebase = আপনার branch-এর commit-গুলোকে নতুন base-এর ওপর আবার সাজিয়ে দেয়, তাই history
+     -> git rebase main
+
+----------------------------install---------------
+1. npm init -y
+2. npm i -D typescript
+2. tsc --init
+3. npm i express mongoose zot jsonwebtoken cors dotenv
+
+4. npm i -D @types/express
+
+----------MVC pattern--------------------------------
+1. client- router--controller--model
+2. moduler pattern---> src/modulers/users/R+C+M+S+I+V
+
+----project run---------------------------------------
+1. npm i -D tsx
+2. "dev": "tsx watch src/server.ts"
+

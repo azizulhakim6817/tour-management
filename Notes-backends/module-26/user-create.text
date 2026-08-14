@@ -1,0 +1,40 @@
+1. import { StatusCodes } from "http-status-codes";
+    => res.status(StatusCodes.CREATED).json({})
+
+2. const message = err instanceof Error ? err.message : "Something went wrong";
+
+3. Partial<IUser>---------------------------
+4. thorw new Error(``)-----------------------
+5. new Error(``)----------------------------
+6. any-----------------------------------
+7. unknow-------------------------------------
+
+8. create user------------------------------------
+/* eslint-disable no-console */
+import { Request, Response } from "express";
+import { StatusCodes } from "http-status-codes";
+import { UserServices } from "./user.service.js";
+
+//! create user--------------------------------------------------
+export const createUser = async (req: Request, res: Response, next:NextFunction) => {
+  try {
+    const user = await UserServices.createUserService(req.body);
+
+    res.status(StatusCodes.CREATED).json({
+      success: true,
+      message: "User created successfully",
+      data: user,
+    });
+  } catch (err: unknown) {
+    console.error(err);
+    next(err)
+    ----expalin extra code----------
+    const message = err instanceof Error ? err.message : "Something went wrong";
+    res.status(StatusCodes.BAD_REQUEST).json({
+      success: false,
+      message,
+    });
+  }
+};
+
+ 

@@ -1,0 +1,79 @@
+---process.exit(1);-----------------------------------------------------
+process.exit(1) হলো Node.js-এর একটি method, যা বর্তমান process-টি সঙ্গে সঙ্গে বন্ধ করে দেয় এবং exit code 1 দিয়ে জানায় যে programটি error-এর কারণে বন্ধ হয়েছে।
+
+Exit Code	অর্থ : ------
+0	Success program শেষ হয়েছে
+1	Error-এর কারণে program বন্ধ হয়েছে
+
+*****unhandledRejection-************************************************
+1. এই কোডটি Global Unhandled Rejection handle। এর কাজ হলো, 
+   যদি application-এর কোথাও কোনো Promise reject হয় এবং সেটি handle না করা হয়, 
+   তাহলে server-কে নিরাপদভাবে বন্ধ করা।
+
+process.on("unhandledRejection", (err) => {
+  console.log(`Unhandled rejection detected... Server shutting down...`, err);
+
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  }
+
+  process.exit(1);
+});
+
+1. process হলো Node.js-এর global object।
+
+2. on() দিয়ে একটি event listener যোগ করা হচ্ছে।
+
+3. "unhandledRejection" event তখন চালু হয়, 
+    যখন কোনো Promise reject হয় কিন্তু .catch() বা try...catch দিয়ে handle করা হয় না।
+
+4. err-এ সেই error object আসে।
+
+5. যদি কোনো Promise handle না করা হয়:
+Error log হবে।
+Application error code 1 দিয়ে বন্ধ হবে।
+
+6. যদি server থাকে → আগে graceful shutdown হবে, তারপর process বন্ধ হবে।
+
+7. যদি server না থাকে → সরাসরি process বন্ধ হবে।
+
+*****uncaughtException-************************************************
+
+1. এই কোডটি Global Uncaught Exception handle। 
+   এর কাজ হলো application-এর যেকোনো handle না করা synchronous error ধরার 
+   পর server-কে নিরাপদভাবে (gracefully) বন্ধ করা।
+
+2. "uncaughtException" event তখন চালু হয় 
+    যখন কোনো synchronous error try...catch দিয়ে handle করা হয় না।
+    err-এ সেই Error Object আসে।
+
+process.on("uncaughtException", (error) => {
+  console.error("Uncaught Exception:", error);
+
+  process.exit(1);
+});
+
+যদি application-এ এমন কোনো error হয় যা try...catch দিয়ে ধরা হয়নি, তাহলে process বন্ধ করে দেওয়া হয়।
+
+
+*****SIGTERM-************************************************
+
+1. এই কোডটি SIGTERM Signal handle। এর কাজ হলো যখন Operating System বা Process Manager (যেমন Docker, PM2, Kubernetes) application-কে বন্ধ করার জন্য SIGTERM signal পাঠায়, তখন server-কে gracefulভাবে বন্ধ করা।
+
+2. "SIGTERM" হলো একটি Operating System Signal।
+
+3. যখন OS বা Docker application বন্ধ করতে চায়, তখন এই event trigger হয়।
+
+process.on("SIGTERM", () => {
+  console.log("SIGTERM signal received. Shutting down gracefully...");
+
+  if (server) {
+    server.close(() => {
+      process.exit(0);
+    });
+  } else {
+    process.exit(0);
+  }
+});
