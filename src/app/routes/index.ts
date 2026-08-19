@@ -7,6 +7,7 @@ import { BookiingRoutes } from "../modules/booking/booking.route.js";
 import { PaymentRoutes } from "../modules/payment/payment.route.js";
 import { otpRoutes } from "../modules/opt/opt.routes.js";
 import { statsRoutes } from "../modules/stats/stats.route.js";
+import { guideRouter } from "../modules/guide/guide.routes.js";
 
 export const router = Router();
 
@@ -46,6 +47,10 @@ const moduleRoutes = [
   {
     path: "/stats",
     route: statsRoutes,
+  },
+  {
+    path: "/guide",
+    route: guideRouter,
   },
 ];
 
